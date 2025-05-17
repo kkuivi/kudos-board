@@ -129,6 +129,7 @@ function HomePage({ boards, categories, setShowModal, showModal, onCreateBoard, 
               title={board.title}
               description={board.description}
               category={board.category}
+              author={board.author}
               onViewBoard={() => navigate(`/board/${board.id}`)}
               onDelete={() => onDeleteBoard(boards.indexOf(board))}
             />

@@ -134,7 +134,18 @@ const BoardDetails = () => {
         </button>
       </div>
       <h2 style={{ textAlign: 'center', fontSize: '2.2rem', marginBottom: 8 }}>{board.title}</h2>
-      <div style={{ textAlign: 'center', fontSize: '1.3rem', marginBottom: 32 }}>{board.description}</div>
+      <div style={{ textAlign: 'center', fontSize: '1.3rem', marginBottom: 8 }}>{board.description}</div>
+      {board.author && (
+        <div style={{ 
+          textAlign: 'center', 
+          fontSize: '1.1rem', 
+          color: '#33807a', 
+          fontStyle: 'italic',
+          marginBottom: 32 
+        }}>
+          Created by {board.author}
+        </div>
+      )}
       {board.messages && board.messages.length > 0 ? (
         board.messages.map((msg, idx) => (
           <KudosMessageCard
