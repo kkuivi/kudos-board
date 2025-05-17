@@ -32,6 +32,13 @@
   text-align: center;
 }
 
+.kudos-card-description {
+  font-size: 1.1rem;
+  color: #444;
+  margin-bottom: 12px;
+  text-align: center;
+}
+
 .kudos-card-buttons {
   display: flex;
   gap: 16px;

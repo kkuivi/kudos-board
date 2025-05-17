@@ -5,6 +5,8 @@ import viteLogo from '/vite.svg'
 import './App.css'
 import KudosBoardCard from './components/KudosBoardCard'
 import BoardDetails from './components/BoardDetails'
+import Header from './components/Header'
+import Footer from './components/Footer'
 
 const API_URL = import.meta.env.VITE_API_URL;
 
@@ -55,6 +57,11 @@ function HomePage({ boards, categories, setShowModal, showModal, onCreateBoard, 
     setSearchResults(results);
   };
 
+  const handleClearSearch = () => {
+    setSearch('');
+    setSearchResults(null);
+  };
+
   // Filter boards based on selected category
   let filteredBoards = boards;
   if (selectedCategory === 'Recent') {
@@ -85,6 +92,7 @@ function HomePage({ boards, categories, setShowModal, showModal, onCreateBoard, 
           }}
         />
         <button className="kudos-btn kudos-btn-outline" onClick={handleSearch}>Search</button>
+        <button className="kudos-btn kudos-btn-outline" onClick={handleClearSearch}>Clear</button>
       </div>
       <div style={{ display: 'flex', gap: '12px', marginBottom: '28px' }}>
         {categories.map((cat) => (
@@ -119,6 +127,7 @@ function HomePage({ boards, categories, setShowModal, showModal, onCreateBoard, 
               key={idx}
               image={board.image}
               title={board.title}
+              description={board.description}
               category={board.category}
               onViewBoard={() => navigate(`/board/${board.id}`)}
               onDelete={() => onDeleteBoard(boards.indexOf(board))}
@@ -224,10 +233,14 @@ function App() {
   };
 
   return (
-    <Routes>
-      <Route path="/" element={<HomePage boards={boards} categories={categories} setShowModal={setShowModal} showModal={showModal} onCreateBoard={handleCreateBoard} onDeleteBoard={handleDeleteBoard} loading={loading} />} />
-      <Route path="/board/:boardId" element={<BoardDetails />} />
-    </Routes>
+    <>
+      <Header />
+      <Routes>
+        <Route path="/" element={<HomePage boards={boards} categories={categories} setShowModal={setShowModal} showModal={showModal} onCreateBoard={handleCreateBoard} onDeleteBoard={handleDeleteBoard} loading={loading} />} />
+        <Route path="/board/:boardId" element={<BoardDetails />} />
+      </Routes>
+      <Footer />
+    </>
   );
 }
 
