@@ -1,0 +1,88 @@
+.kudos-message-card {
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.10);
+  border: 2px solid #ececec;
+  padding: 32px 24px 24px 24px;
+  max-width: 600px;
+  margin: 24px auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.kudos-message-title {
+  font-size: 2.4rem;
+  font-weight: bold;
+  margin: 0 0 12px 0;
+  text-align: center;
+}
+
+.kudos-message-subtitle {
+  font-size: 1.6rem;
+  margin-bottom: 18px;
+  text-align: center;
+}
+
+.kudos-message-image {
+  width: 80%;
+  max-width: 420px;
+  height: auto;
+  border-radius: 6px;
+  margin-bottom: 40px;
+  display: block;
+}
+
+.kudos-message-card-bottom {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: auto;
+}
+
+.kudos-message-votes {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.kudos-message-upvote, .kudos-message-downvote {
+  background: #6d5c7c;
+  color: #fff;
+  font-size: 1.3rem;
+  border: none;
+  border-radius: 8px;
+  padding: 8px 16px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+.kudos-message-upvote:hover, .kudos-message-downvote:hover {
+  background: #57476a;
+}
+
+.kudos-message-vote-count {
+  font-size: 1.3rem;
+  font-weight: 600;
+  min-width: 32px;
+  text-align: center;
+  color: #6d5c7c;
+  background: #f3f0f7;
+  border-radius: 6px;
+  padding: 6px 12px;
+  margin: 0 2px;
+}
+
+.kudos-message-delete {
+  background: #33807a;
+  color: #fff;
+  font-size: 1.4rem;
+  border: none;
+  border-radius: 12px;
+  padding: 16px 32px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+.kudos-message-delete:hover {
+  background: #25615c;
+} 
