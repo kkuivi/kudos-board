@@ -204,6 +204,7 @@ function App() {
     fetch(`${API_URL}/boards`)
       .then(res => res.json())
       .then(data => {
+        console.log(data);
         setBoards(data);
         setLoading(false);
       })
